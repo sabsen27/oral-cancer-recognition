@@ -1,0 +1,56 @@
+task: 'classification'
+classification_mode: 'whole'
+
+# models and weights here: https://pytorch.org/vision/stable/models.html
+load_model: shufflenet_v2_x1_0
+
+model:
+  num_classes: 3
+  name: resnet50
+  weights: ResNet50_Weights.IMAGENET1K_V2
+  output_dim: 64
+
+model_seg: 'fcn'
+sgm_type: 'soft'
+
+dataset:
+  #train: ./data/train_min.json
+  #val: ./data/val_min.json
+  #test: ./data/test_min.json
+  train: ./data/train.json
+  val: ./data/val.json
+  test: ./data/test.json
+  resize: 224
+
+train:
+  save_path: "./models/"
+  seed: -1
+  batch_size: 32
+  lr: 0.000001
+  devices: 1
+  max_epochs: 1000
+  patience: 10
+
+
+generate_map: "None"
+
+checkpoint:
+  version: 0
+
+log:  
+  path: "./logs/"
+  wandb: True
+  tensorboard: False
+
+# Configuration parameters for the autoencoder
+ae:
+  latent_dim: 512
+  enc_feature_maps: 32
+  dec_feature_maps: 32
+  n_channels: 3
+
+wandb:
+  wandb:
+  entity: simonelandi99
+  project: improve_classifier_via_segment 
+  tag: ""

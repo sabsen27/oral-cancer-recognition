@@ -6,6 +6,7 @@ from pytorch_lightning import LightningDataModule
 from src.data1.contrastive_classification.dataset import OralContrastiveDataset
 
 
+
 class OralContrastiveDataModule(LightningDataModule):
     def __init__(self, train, val, test, batch_size=32, train_transform=None, val_transform=None,
                  test_transform=None, transform=None):
@@ -33,5 +34,6 @@ class OralContrastiveDataModule(LightningDataModule):
 
     def predict_dataloader(self):
         return DataLoader(self.test_dataset, batch_size=self.batch_size, shuffle=False)
+
 
 

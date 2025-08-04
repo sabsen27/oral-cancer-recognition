@@ -13,7 +13,6 @@ class OralContrastiveDataset(torch.utils.data.Dataset):
         with open(images, "r") as f:
             self.dataset = json.load(f)
             
-
         with open("data/dataset.json", "r") as f:
             self.contrastive_data = json.load(f)
 
@@ -82,4 +81,5 @@ class OralContrastiveDataset(torch.utils.data.Dataset):
         category = self.categories[annotation["category_id"]]
 
         return image, category, image_id, image_name, positive, negative, positive_image, negative_image
+
 

@@ -10,7 +10,7 @@ class SegmentationMetrics():
     Also this calculator provides the function to calculate specificity, also known as true negative 
     rate, as specificity/TPR is meaningless in multiclass cases.
     """
-    def __init__(self, eps=1e-5, activation='0-1'):
+    def __init__(self, eps=1e-5, activation ='0-1'):
         self.eps = eps
         self.activation = activation
 
@@ -64,5 +64,6 @@ def calculate_intersection_over_salient_region(salient_area, ground_truth_mask):
     iou = np.sum(intersection) / salient_pixels
 
     return iou
+
 
 

@@ -1,4 +1,4 @@
-task: 'classification'
+task: 'classification1'
 classification_mode: 'whole'
 
 # models and weights here: https://pytorch.org/vision/stable/models.html
@@ -54,3 +54,4 @@ wandb:
   entity: simonelandi99
   project: improve_classifier_via_segment 
   tag: ""
+

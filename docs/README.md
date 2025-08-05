@@ -5,7 +5,7 @@
 
 To install the project, clone the repository and get the necessary dependencies:
 ```sh
-git clone https://github.com/MarcoParola/oral3.git
+git clone https://github.com/sabsen27/oral-cancer-recognition.git
 cd oral3
 ```
 
@@ -165,3 +165,4 @@ Then, to perform the fit and test of the KNN, it is necessary to specify the `fe
 # FIT knn on anchor images, TEST knn on test images
 python knn.py
 ```
+
